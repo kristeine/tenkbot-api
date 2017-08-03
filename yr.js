@@ -25,7 +25,7 @@ module.exports = (res, imorgen) => {
     if (precipitation < 1) {
       res.json({
         messages: [
-          {text: "Ser ut til å bli fint vær!"}
+          {text: "Ser ut til å bli fint vær! ☀️"}
         ]
       });
     } else if (precipitation >=1 && precipitation < 3) {
