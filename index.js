@@ -1,4 +1,5 @@
 const express = require('express');
+const yr = require('./yr.js');
 const app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -12,11 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/yr/idag', (req, res) => {
-  res.json({
-    messages: [
-      {text: "Kan være greit å ha med paraply i dag! ☔"}
-    ]
-  });
+  yr(res);
 });
 
 app.listen(app.get('port'), () => {
