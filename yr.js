@@ -3,11 +3,21 @@ const xml2json = require('xml2json');
 
 const osloYrURL = 'http://www.yr.no/sted/Norge/Oslo/Oslo/Oslo/varsel.xml';
 
-module.exports = res => {
+module.exports = (res, imorgen) => {
   fetch(osloYrURL)
   .then(response => response.text())
   .then(response => JSON.parse(xml2json.toJson(response)))
-  .then(data => data.weatherdata.forecast.tabular.time.slice(0,2))
+  .then(data => {
+    const perioder = data.weatherdata.forecast.tabular.time;
+    if (imorgen) {
+      let subset = perioder;
+      while (subset[0].period !== "0") {
+        subset.shift();
+      }
+      return subset.slice(0,4);
+    }
+    return perioder.slice(0,2);
+  })
   .then(perioder =>
     perioder.reduce((sum, periode) => sum + Number(periode.precipitation.value), 0)
   )
