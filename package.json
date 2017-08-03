@@ -1,0 +1,17 @@
+{
+  "name": "tenkbot-api",
+  "version": "1.0.0",
+  "description": "API for tenkbot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": "7.10.1"
+  },
+  "dependencies": {
+    "express": "4.15.3"
+  }
+}
