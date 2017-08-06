@@ -1,6 +1,7 @@
 const express = require('express');
 const yr = require('./yr.js');
 const fotball = require('./fotball.js');
+const ruter = require('./ruter.js');
 
 const app = express();
 
@@ -28,6 +29,18 @@ app.get('/fotball', (req, res) => {
   } else {
     fotball(res);
   }
+});
+
+app.get('/ruter/buss', (req, res) => {
+  ruter.buss(res);
+});
+
+app.get('/ruter/trikk', (req, res) => {
+  ruter.trikk(res);
+});
+
+app.get('/ruter/tog', (req, res) => {
+  ruter.tog(res);
 });
 
 app.listen(app.get('port'), () => {
