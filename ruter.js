@@ -27,21 +27,21 @@ module.exports = {
       if (departures.length === 0) {
         res.json({
           messages: [
-            {text: "Det er ingen avganger innen den neste timen 😢"}
+            {text: "Det er ingen avganger fra Kjelsås stasjon innen den neste halvtimen 😢"}
           ]
         });
       } else if (departures.length === 1) {
         const departure = departures.pop();
         res.json({
           messages: [
-            {text: `Bussen ${departure.name} går om ${departure.minutes} minutter (kl ${departure.time}) 🏃`}
+            {text: `Bussen ${departure.name} går om ${departure.minutes} minutter (kl ${departure.time}) fra Kjelsås stasjon 🏃`}
           ]
         });
       } else {
         const last = departures.pop();
         res.json({
           messages: [
-            {text: `De neste bussavgangene er ${departures.map(item => `${item.name} kl ${item.time}`).join(', ')} og ${last.name} kl ${last.time}`}
+            {text: `De neste bussavgangene fra Kjelsås stasjon er ${departures.map(item => `${item.name} kl ${item.time}`).join(', ')} og ${last.name} kl ${last.time}`}
           ]
         });
       }
@@ -66,21 +66,21 @@ module.exports = {
       if (departures.length === 0) {
         res.json({
           messages: [
-            {text: "Det er ingen avganger innen den neste timen 😢"}
+            {text: "Det er ingen avganger fra Kjelsås innen den neste halvtimen 😢"}
           ]
         });
       } else if (departures.length === 1) {
         const departure = departures.pop();
         res.json({
           messages: [
-            {text: `Trikken ${departure.name} går om ${departure.minutes} minutter (kl ${departure.time}) 🏃`}
+            {text: `Trikken ${departure.name} går om ${departure.minutes} minutter (kl ${departure.time}) fra Kjelsås 🏃`}
           ]
         });
       } else {
         const last = departures.pop();
         res.json({
           messages: [
-            {text: `De neste trikkeavgangene er ${departures.map(item => `${item.name} kl ${item.time}`).join(', ')} og ${last.name} kl ${last.time}`}
+            {text: `De neste trikkeavgangene fra Kjelsås er ${departures.map(item => `${item.name} kl ${item.time}`).join(', ')} og ${last.name} kl ${last.time}`}
           ]
         });
       }
@@ -105,21 +105,21 @@ module.exports = {
       if (departures.length === 0) {
         res.json({
           messages: [
-            {text: "Det er ingen avganger innen den neste timen 😢"}
+            {text: "Det er ingen avganger fra Kjelsås togstasjon innen den neste timen 😢"}
           ]
         });
       } else if (departures.length === 1) {
         const departure = departures.pop();
         res.json({
           messages: [
-            {text: `Toget ${departure.name} går om ${departure.minutes} minutter (kl ${departure.time}) 🏃`}
+            {text: `Toget ${departure.name} går om ${departure.minutes} minutter (kl ${departure.time}) fra Kjelsås togstasjon 🏃`}
           ]
         });
       } else {
         const last = departures.pop();
         res.json({
           messages: [
-            {text: `De neste togavgangene er ${departures.map(item => `${item.name} kl ${item.time}`).join(', ')} og ${last.name} kl ${last.time}`}
+            {text: `De neste togavgangene fra Kjelsås togstasjon er ${departures.map(item => `${item.name} kl ${item.time}`).join(', ')} og ${last.name} kl ${last.time}`}
           ]
         });
       }
