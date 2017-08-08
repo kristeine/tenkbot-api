@@ -31,13 +31,13 @@ module.exports = (res, imorgen) => {
     } else if (precipitation >=1 && precipitation < 3) {
       res.json({
         messages: [
-          {text: "Kan være greit å ha med paraply i dag, det ser ut til at det skal regne litt! ☔"}
+          {text: `Kan være greit å ha med paraply i ${imorgen ? 'morgen' : 'dag'}, det ser ut til at det skal regne litt! ☔`}
         ]
       });
     } else if (precipitation > 3) {
       res.json({
         messages: [
-          {text: "Ta frem allværsjakken og paraplyen, i dag blir det regnvær! ☔"}
+          {text: `Ta frem allværsjakken og paraplyen, i ${imorgen ? 'morgen' : 'dag'} blir det regnvær! ☔`}
         ]
       });
     }
